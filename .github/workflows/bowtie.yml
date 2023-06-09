@@ -1,0 +1,23 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  bowtie-job:
+    name: Bowtie Validation
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3.5.2
+        
+      - name: Bowtie Setup
+        uses: bowtie-json-schema/bowtie@v2023.05.12
+        
+      - name: Run Validation
+        run: |
+           bowtie suite $(find /path/to/bowtie/checkout/implementations/ -mindepth 1 -maxdepth 1 -type d | sed 's/.*\/implementations\//-i /') ./validation/td-json-schema-validation.json | bowtie report
+           
+      - name: Visualize Report
+        uses: pavi2410/html-preview-action@v2
+        with:
+          html_file: bowtie-report.html
