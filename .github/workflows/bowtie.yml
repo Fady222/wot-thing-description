@@ -15,8 +15,7 @@ jobs:
         
       - name: Test
         run: |
-           whereis -l bowtie
-           ls $(whereis -l bowtie)
+           ls -a /opt/pipx_bin/bowtie
         
       - name: Run Validation
         run: |
