@@ -1,4 +1,4 @@
-{
+[{
     "description": "The test case description",
     "schema": {
         "title": "Thing Description",
@@ -1485,4 +1485,4 @@
             "valid": true
         }
     ]
-}
+}]
