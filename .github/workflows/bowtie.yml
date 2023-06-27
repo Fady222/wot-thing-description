@@ -9,12 +9,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.2
+      
+      - name: Checkout Bowtie Implementations
+        uses: actions/checkout@v3.5.2
+        with:
+          repository: bowtie-json-schema/bowtie
+          path: implementations
+          sparse-checkout: |
+            implementations
         
       - name: Bowtie Setup
         uses: bowtie-json-schema/bowtie@v2023.05.12
         
       - name: Test
-        run: find /opt/pipx/venvs/bowtie-json-schema/ -mindepth 1 -name implementations -type d
+        run: find implementations/ -mindepth 1 -maxdepth 1 -type d
         
       - name: Run Validation
         run: |
