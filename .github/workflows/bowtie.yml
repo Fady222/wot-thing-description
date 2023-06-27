@@ -14,7 +14,7 @@ jobs:
         uses: bowtie-json-schema/bowtie@v2023.05.12
         
       - name: Test
-        run: ls -a $(brew --repository)/Library/Taps
+        run: ls ~/.local/bin
         
       - name: Run Validation
         run: |
