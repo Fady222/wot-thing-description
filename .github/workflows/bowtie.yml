@@ -19,8 +19,8 @@ jobs:
       - name: Bowtie Setup
         uses: bowtie-json-schema/bowtie@v2023.05.12
         
-      - name: Test
-        run: cat validation/bowtie_test.json
+#       - name: Test
+#         run: cat validation/bowtie_test.json
         
       - name: Run Validation
         run: |
