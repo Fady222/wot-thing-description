@@ -14,19 +14,17 @@ jobs:
         uses: actions/checkout@v3.5.2
         with:
           repository: bowtie-json-schema/bowtie
-          path: implementations
-          sparse-checkout: |
-            implementations
+          path: bowtie
         
       - name: Bowtie Setup
         uses: bowtie-json-schema/bowtie@v2023.05.12
         
       - name: Test
-        run: find implementations/ -mindepth 1 -maxdepth 1 -type d
+        run: find bowtie/implementations -mindepth 1 -maxdepth 1 -type d
         
       - name: Run Validation
         run: |
-           bowtie suite $(find /path/to/bowtie/checkout/implementations/ -mindepth 1 -maxdepth 1 -type d | sed 's/.*\/implementations\//-i /') ./validation/td-json-schema-validation.json | bowtie report
+           bowtie suite $(find bowtie/implementations -mindepth 1 -maxdepth 1 -type d | sed 's/.*\/implementations\//-i /') ./validation/td-json-schema-validation.json | bowtie report
            
       - name: Visualize Report
         uses: pavi2410/html-preview-action@v2
