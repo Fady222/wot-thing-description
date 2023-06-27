@@ -20,11 +20,11 @@ jobs:
         uses: bowtie-json-schema/bowtie@v2023.05.12
         
       - name: Test
-        run: find bowtie/implementations -mindepth 1 -maxdepth 1 -type d
+        run: cat validation/bowtie_test.json
         
       - name: Run Validation
         run: |
-           bowtie suite $(find bowtie/implementations -mindepth 1 -maxdepth 1 -type d | sed 's/.*\/implementations\//-i /') ./validation/bowtie_test.json | bowtie report
+           bowtie suite $(find bowtie/implementations -mindepth 1 -maxdepth 1 -type d | sed 's/.*\/implementations\//-i /') validation/bowtie_test.json | bowtie report
            
       - name: Visualize Report
         uses: pavi2410/html-preview-action@v2
