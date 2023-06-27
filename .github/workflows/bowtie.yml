@@ -14,7 +14,7 @@ jobs:
         uses: bowtie-json-schema/bowtie@v2023.05.12
         
       - name: Test
-        run: find /opt/pipx/venvs/bowtie-json-schema/ -mindepth 1 -maxdepth 3 -type d
+        run: find /opt/pipx/venvs/bowtie-json-schema/ -mindepth 1 -name implementations -type d
         
       - name: Run Validation
         run: |
