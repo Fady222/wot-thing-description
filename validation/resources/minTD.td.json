@@ -27,7 +27,7 @@
                 "description": "Current status of the device",
                 "forms": [
                     {
-                        "href": "https://mydevice.example.com/status",
+                        "href": "https://mydevice.example.com/status"
                     }]
             }
         }
