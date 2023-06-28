@@ -21,7 +21,7 @@ jobs:
         
       - name: Run Validation
         run: |
-           bowtie validate $(find bowtie/implementations -mindepth 1 -maxdepth 1 -type d | sed 's/.*\/implementations\//-i /') -D draft7 validation/draft7/bowtie_test.json | bowtie report
+           bowtie validate $(find bowtie/implementations -mindepth 1 -maxdepth 1 -type d | sed 's/.*\/implementations\//-i /') -D draft7 validation/td-json-schema-validation.json | bowtie report
            
       - name: Visualize Report
         run: cat bowtie-report.html
